@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resources for this assignment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f7f6;
+    --surface: #ffffff;
+    --ink: #1b2422;
+    --muted: #5a6764;
+    --line: #d9dfdc;
+    --link: #1f5f8b;
+    --ucsc: #c23b2e;
+    --encode: #2f7d3a;
+    --roadmap: #b8920a;
+    --other: #6a4fb3;
+    --learn: #4c6a78;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131917;
+      --surface: #1b2321;
+      --ink: #e7ecea;
+      --muted: #a2afab;
+      --line: #2f3a37;
+      --link: #8cc4ea;
+      --ucsc: #ea7a6e;
+      --encode: #78c285;
+      --roadmap: #e2c04f;
+      --other: #ab97e6;
+      --learn: #93b2c0;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131917;
+    --surface: #1b2321;
+    --ink: #e7ecea;
+    --muted: #a2afab;
+    --line: #2f3a37;
+    --link: #8cc4ea;
+    --ucsc: #ea7a6e;
+    --encode: #78c285;
+    --roadmap: #e2c04f;
+    --other: #ab97e6;
+    --learn: #93b2c0;
+    color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Work Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  main {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 4rem;
+  }
+  h1 {
+    font-family: "Spectral", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
+  }
+  .intro {
+    color: var(--muted);
+    max-width: 40rem;
+    margin: 0 0 2.25rem;
+  }
+  .key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+  .key li { display: flex; align-items: center; gap: 0.45rem; }
+  .swatch {
+    width: 0.8rem; height: 0.8rem; border-radius: 2px;
+    background: var(--c);
+    flex: none;
+  }
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.name {
+    font-weight: 600;
+    width: 26%;
+    border-left: 4px solid var(--c);
+  }
+  td.desc { color: var(--ink); max-width: 34rem; }
+  td.link { width: 24%; white-space: nowrap; }
+  .optional {
+    display: block;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .ext { font-size: 0.8em; margin-left: 0.15em; }
+  tr.ucsc { --c: var(--ucsc); }
+  tr.encode { --c: var(--encode); }
+  tr.roadmap { --c: var(--roadmap); }
+  tr.other { --c: var(--other); }
+  tr.learn { --c: var(--learn); }
+
+  @media (max-width: 720px) {
+    main { padding: 2.25rem 1rem 3rem; }
+    .table-wrap { overflow: visible; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tr {
+      border-bottom: 1px solid var(--line);
+      border-left: 4px solid var(--c);
+      padding: 0.9rem 1rem;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    td { padding: 0; border: none; }
+    td.name { border-left: none; width: auto; margin-bottom: 0.25rem; }
+    td.desc { margin-bottom: 0.4rem; }
+    td.link { width: auto; white-space: normal; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Resources for this assignment</h1>
+  <p class="intro">Everything you’ll need to answer the questions, from the genome browser itself to the documentation behind each track. All links open in a new tab.</p>
+
+  <ul class="key" aria-label="Resource groups">
+    <li><span class="swatch" style="--c: var(--ucsc)"></span>UCSC Genome Browser</li>
+    <li><span class="swatch" style="--c: var(--encode)"></span>ENCODE</li>
+    <li><span class="swatch" style="--c: var(--roadmap)"></span>Roadmap Epigenomics</li>
+    <li><span class="swatch" style="--c: var(--other)"></span>Other browsers and data</li>
+    <li><span class="swatch" style="--c: var(--learn)"></span>Background reading</li>
+  </ul>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Resource</th><th scope="col">What it is</th><th scope="col">Link</th></tr>
+      </thead>
+      <tbody>
+        <tr class="ucsc">
+          <td class="name">UCSC Genome Browser</td>
+          <td class="desc">The genome browser you will use for every question (Kent et al., 2002).</td>
+          <td class="link"><a href="https://genome.ucsc.edu" target="_blank" rel="noopener">genome.ucsc.edu</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="ucsc">
+          <td class="name">UCSC Track Hubs page</td>
+          <td class="desc">Where you connect the Roadmap hub (My Data, then Track Hubs).</td>
+          <td class="link"><a href="https://genome.ucsc.edu/cgi-bin/hgHubConnect" target="_blank" rel="noopener">Track Data Hubs</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="ucsc">
+          <td class="name">UCSC Track Hub help</td>
+          <td class="desc">Official documentation for connecting and troubleshooting hubs.</td>
+          <td class="link"><a href="https://genome.ucsc.edu/goldenPath/help/hgTrackHubHelp.html" target="_blank" rel="noopener">Track Hub User Guide</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="ucsc">
+          <td class="name">UCSC browser documentation</td>
+          <td class="desc">Display modes, track configuration, and image export.</td>
+          <td class="link"><a href="https://genome.ucsc.edu/goldenPath/help/hgTracksHelp.html" target="_blank" rel="noopener">Genome Browser User Guide</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="encode">
+          <td class="name">ENCODE data portal</td>
+          <td class="desc">The Encyclopedia of DNA Elements, including phase II ENCODE and Roadmap data.</td>
+          <td class="link"><a href="https://www.encodeproject.org" target="_blank" rel="noopener">encodeproject.org</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="encode">
+          <td class="name">ENCODE SCREEN</td>
+          <td class="desc">Search engine for the registry of candidate regulatory elements.</td>
+          <td class="link"><a href="https://screen.encodeproject.org" target="_blank" rel="noopener">screen.encodeproject.org</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="roadmap">
+          <td class="name">Roadmap chromatin state documentation</td>
+          <td class="desc">State definitions, colors, and model parameters for the Roadmap chromatin-state models.</td>
+          <td class="link"><a href="https://egg2.wustl.edu/roadmap/web_portal/chr_state_learning.html" target="_blank" rel="noopener">Chromatin state learning</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="other">
+          <td class="name">WashU Epigenome Browser</td>
+          <td class="desc">An alternative browser for the same Roadmap data, useful if the UCSC hub is unavailable.</td>
+          <td class="link"><a href="https://epigenomegateway.wustl.edu" target="_blank" rel="noopener">epigenomegateway.wustl.edu</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="other">
+          <td class="name">GTEx Portal</td>
+          <td class="desc">Tissue expression data behind the GTEx track (GTEx Consortium, 2020).</td>
+          <td class="link"><a href="https://gtexportal.org" target="_blank" rel="noopener">gtexportal.org</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+        <tr class="learn">
+          <td class="name">ChromHMM tutorial lecture<span class="optional">Optional, PDF</span></td>
+          <td class="desc">Jason Ernst’s ENCODE tutorial on chromatin states (Ernst, 2015).</td>
+          <td class="link"><a href="https://compbio.mit.edu/ChromHMM/" target="_blank" rel="noopener">ChromHMM tutorial</a><span class="ext" aria-hidden="true">↗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+</html>
